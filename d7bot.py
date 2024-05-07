@@ -73,15 +73,9 @@ async def green(interaction: discord.Interaction):
 
 @green.error
 async def handler(ctx: commands.Context, error: commands.CommandError):
-    print(error)
+    #print(error)
     await ctx.response.send_message(
         error, ephemeral=True, delete_after=30
     )
-
-    #if isinstance(error, commands.CheckFailure):
-    #    await ctx.send("Check has failed!")
-    #else:
-    #    await ctx.send(f"Got unexpected error: {error}")
-
 
 bot.run(token)
