@@ -10,6 +10,7 @@ from settings import token
 
 MY_GUILD = discord.Object(id=835192897690402866)  # replace with your guild id
 channelID = 1107328095763042384  # channel ID goes here
+role = "TEST - Net Controller" #role for checking
 
 
 
@@ -47,12 +48,10 @@ async def on_ready():
 
 
 @bot.tree.command()
-@app_commands.checks.has_role("TEST - Net Controller")
+@app_commands.checks.has_role(role)
 async def green(interaction: discord.Interaction):
     """Sets the current status to level Green"""
     
-
-
     #Sends confirmation message to user
     await interaction.response.send_message(
         f'Setting to Green status.', ephemeral=True, delete_after=30
