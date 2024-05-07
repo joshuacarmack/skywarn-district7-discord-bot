@@ -8,9 +8,9 @@ from discord.ext import commands
 from settings import token
 
 
-MY_GUILD = discord.Object(id=835192897690402866)  # replace with your guild id
-channelID = 1107328095763042384  # channel ID goes here
-role = "TEST - Net Controller" #role for checking
+MY_GUILD = discord.Object(id=1089329396868993084)  # replace with your guild id
+channelID = 1090402258031751228  # channel ID goes here
+role = "Net Control" #role for checking
 
 
 
