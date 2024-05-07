@@ -51,7 +51,7 @@ async def green(interaction: discord.Interaction):
     """Sets the current status to level Green"""
     # await interaction.response.send_message(f'Hi, {interaction.user.mention}')
     await interaction.response.send_message(
-        f'Setting to Green status.', ephemeral=True
+        f'Setting to Green status.', ephemeral=True, delete_after=60
     )
 
     embed = discord.Embed(title="District 7 Status: Green",
