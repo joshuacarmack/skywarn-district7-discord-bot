@@ -46,7 +46,7 @@ async def on_ready():
     print('------')
     
 
-
+## STATUS GREEN
 @bot.tree.command()
 @app_commands.checks.has_role(role)
 async def green(interaction: discord.Interaction):
@@ -62,7 +62,63 @@ async def green(interaction: discord.Interaction):
                         description="No active NWS alerts or severe weather is expected. Repeater will be operational as usual.",
                         colour=0x00ff00,
                         timestamp=datetime.now())
+    embed.add_field(name="Repeater",
+                value="WR4CC (146.700 (-) PL 77.0)",
+                inline=False)
     embed.set_image(url="https://i.imgur.com/kaGKstv.png")
+    embed.set_footer(text=f'Activated by: {interaction.user.display_name}')
+
+    #Gets channel and sends message
+    channel = bot.get_channel(int(channelID))
+    await channel.send(content='@everyone', embed=embed)
+
+
+## STATUS YELLOW
+@bot.tree.command()
+@app_commands.checks.has_role(role)
+async def green(interaction: discord.Interaction):
+    """Sets the current status to level Yellow"""
+    
+    #Sends confirmation message to user
+    await interaction.response.send_message(
+        f'Setting to Yellow status.', ephemeral=True, delete_after=30
+    )
+
+    #Builds the embed
+    embed = discord.Embed(title="District 7 Status: Yellow",
+                        description="A severe thunderstorm watch, tornado watch, or flash flood watch is issued for any of the counties in the district by NWS Morristown. Severe weather will likely occur in our area. Please keep all conversations to the point on the repeater and be prepared to relinquish the repeater to net control should the watch be upgraded to a warning.",
+                        colour=0xffff00,
+                        timestamp=datetime.now())
+    embed.add_field(name="Repeater",
+                value="WR4CC (146.700 (-) PL 77.0)",
+                inline=False)
+    embed.set_image(url="https://i.imgur.com/QdIQgRj.png")
+    embed.set_footer(text=f'Activated by: {interaction.user.display_name}')
+
+    #Gets channel and sends message
+    channel = bot.get_channel(int(channelID))
+    await channel.send(content='@everyone', embed=embed)
+
+## STATUS RED
+@bot.tree.command()
+@app_commands.checks.has_role(role)
+async def red(interaction: discord.Interaction):
+    """Sets the current status to level Red"""
+    
+    #Sends confirmation message to user
+    await interaction.response.send_message(
+        f'Setting to Red status.', ephemeral=True, delete_after=30
+    )
+
+    #Builds the embed
+    embed = discord.Embed(title="District 7 Status: Red",
+                        description="No active NWS alerts or severe weather is expected. Repeater will be operational as usual.",
+                        colour=0xff0000,
+                        timestamp=datetime.now())
+    embed.add_field(name="Repeater",
+                value="WR4CC (146.700 (-) PL 77.0)",
+                inline=False)
+    embed.set_image(url="https://i.imgur.com/VVgp41c.png")
     embed.set_footer(text=f'Activated by: {interaction.user.display_name}')
 
     #Gets channel and sends message
