@@ -124,7 +124,17 @@ async def red(interaction: discord.Interaction):
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
     await channel.send(content='@everyone', embed=embed)
+
+# BOT TEST
+@bot.tree.command()
+@app_commands.checks.has_role(role)
+async def test(interaction: discord.Interaction):
+    """Tests the bot"""
     
+    #Sends confirmation message to user
+    await interaction.response.send_message(
+        f'Bot responded okay. Permissions granted.', ephemeral=True, delete_after=30
+    )    
 
 @green.error
 async def handler(ctx: commands.Context, error: commands.CommandError):
@@ -141,6 +151,13 @@ async def handler(ctx: commands.Context, error: commands.CommandError):
     )
 
 @red.error
+async def handler(ctx: commands.Context, error: commands.CommandError):
+    #print(error)
+    await ctx.response.send_message(
+        error, ephemeral=True, delete_after=30
+    )
+
+@test.error
 async def handler(ctx: commands.Context, error: commands.CommandError):
     #print(error)
     await ctx.response.send_message(
