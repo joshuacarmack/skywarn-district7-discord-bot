@@ -133,4 +133,18 @@ async def handler(ctx: commands.Context, error: commands.CommandError):
         error, ephemeral=True, delete_after=30
     )
 
+@yellow.error
+async def handler(ctx: commands.Context, error: commands.CommandError):
+    #print(error)
+    await ctx.response.send_message(
+        error, ephemeral=True, delete_after=30
+    )
+
+@red.error
+async def handler(ctx: commands.Context, error: commands.CommandError):
+    #print(error)
+    await ctx.response.send_message(
+        error, ephemeral=True, delete_after=30
+    )
+
 bot.run(token)
