@@ -55,7 +55,7 @@ async def green(interaction: discord.Interaction):
 
     #Sends confirmation message to user
     await interaction.response.send_message(
-        f'Setting to Green status.', ephemeral=True, delete_after=60
+        f'Setting to Green status.', ephemeral=True, delete_after=30
     )
 
     #Builds the embed
