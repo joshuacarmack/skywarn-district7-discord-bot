@@ -47,6 +47,7 @@ async def on_ready():
 
 
 @bot.tree.command()
+@commands.has_role(1107318103643258930)
 async def green(interaction: discord.Interaction):
     """Sets the current status to level Green"""
     
