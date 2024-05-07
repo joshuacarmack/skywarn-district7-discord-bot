@@ -49,21 +49,23 @@ async def on_ready():
 @bot.tree.command()
 async def green(interaction: discord.Interaction):
     """Sets the current status to level Green"""
-    # await interaction.response.send_message(f'Hi, {interaction.user.mention}')
+    
+
+
+    #Sends confirmation message to user
     await interaction.response.send_message(
         f'Setting to Green status.', ephemeral=True, delete_after=60
     )
 
+    #Builds the embed
     embed = discord.Embed(title="District 7 Status: Green",
                         description="No active NWS alerts or severe weather is expected. Repeater will be operational as usual.",
                         colour=0x00ff00,
                         timestamp=datetime.now())
-
     embed.set_image(url="https://i.imgur.com/kaGKstv.png")
-
     embed.set_footer(text=f'Activated by: {interaction.user.display_name}')
 
-
+    #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
     await channel.send(content='@everyone', embed=embed)
     
