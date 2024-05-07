@@ -46,7 +46,7 @@ async def on_ready():
     print('------')
     
 
-## STATUS GREEN
+# STATUS GREEN
 @bot.tree.command()
 @app_commands.checks.has_role(role)
 async def green(interaction: discord.Interaction):
@@ -73,10 +73,10 @@ async def green(interaction: discord.Interaction):
     await channel.send(content='@everyone', embed=embed)
 
 
-## STATUS YELLOW
+# STATUS YELLOW
 @bot.tree.command()
 @app_commands.checks.has_role(role)
-async def green(interaction: discord.Interaction):
+async def yellow(interaction: discord.Interaction):
     """Sets the current status to level Yellow"""
     
     #Sends confirmation message to user
@@ -99,7 +99,7 @@ async def green(interaction: discord.Interaction):
     channel = bot.get_channel(int(channelID))
     await channel.send(content='@everyone', embed=embed)
 
-## STATUS RED
+# STATUS RED
 @bot.tree.command()
 @app_commands.checks.has_role(role)
 async def red(interaction: discord.Interaction):
