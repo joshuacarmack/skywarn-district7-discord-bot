@@ -47,7 +47,7 @@ async def on_ready():
 
 
 @bot.tree.command()
-@app_commands.checks.has_role(1107318103643258930)
+@app_commands.checks.has_role("TEST - Net Controller")
 async def green(interaction: discord.Interaction):
     """Sets the current status to level Green"""
     
@@ -73,10 +73,15 @@ async def green(interaction: discord.Interaction):
 
 @green.error
 async def handler(ctx: commands.Context, error: commands.CommandError):
-    if isinstance(error, commands.CheckFailure):
-        await ctx.send("Check has failed!")
-    else:
-        await ctx.send(f"Got unexpected error: {error}")
+    print(error)
+    await ctx.response.send_message(
+        error, ephemeral=True, delete_after=30
+    )
+
+    #if isinstance(error, commands.CheckFailure):
+    #    await ctx.send("Check has failed!")
+    #else:
+    #    await ctx.send(f"Got unexpected error: {error}")
 
 
 bot.run(token)
