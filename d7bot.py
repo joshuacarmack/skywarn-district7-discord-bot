@@ -112,7 +112,7 @@ async def red(interaction: discord.Interaction):
 
     #Builds the embed
     embed = discord.Embed(title="District 7 Status: Red",
-                        description="No active NWS alerts or severe weather is expected. Repeater will be operational as usual.",
+                        description="A severe thunderstorm warning, tornado warning, or flash flood warning has been issued for any of the counties in the district by NWS Morristown. This means severe weather is occurring in our area. Take cover. The severe WX net will be operational at this time and the repeater will only be open to emergency traffic, severe reports, or questions about the storm. No other traffic will be permitted on the repeater. All traffic must go through net control.",
                         colour=0xff0000,
                         timestamp=datetime.now())
     embed.add_field(name="Repeater",
