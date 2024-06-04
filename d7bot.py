@@ -77,7 +77,7 @@ async def green(interaction: discord.Interaction):
 
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
-    await channel.send(content='@everyone', embed=embed)
+    await channel.send(content='@everyone Status: Green', embed=embed)
 
 
 # STATUS YELLOW
@@ -104,7 +104,7 @@ async def yellow(interaction: discord.Interaction):
 
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
-    await channel.send(content='@everyone', embed=embed)
+    await channel.send(content='@everyone Status: Yellow', embed=embed)
 
 # STATUS RED
 @bot.tree.command()
@@ -130,7 +130,7 @@ async def red(interaction: discord.Interaction):
 
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
-    await channel.send(content='@everyone', embed=embed)
+    await channel.send(content='@everyone Status: Red', embed=embed)
 
 # BOT TEST
 @bot.tree.command()
