@@ -139,6 +139,10 @@ async def red(interaction: discord.Interaction):
 async def status(interaction: discord.Interaction, message: str) -> None:
     """Gives an update"""
     
+    await interaction.response.send_message(
+        f'Posting status update', ephemeral=True, delete_after=1
+    )
+
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
     await channel.send(content=f'@everyone {message}')
