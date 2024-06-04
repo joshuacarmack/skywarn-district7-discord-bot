@@ -5,12 +5,19 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-from settings import token
+import os
+
+#from settings import token
+
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
+MY_GUILD = os.getenv('GUILD')
+channelID = os.getenv('CHANNEL')
+role = os.getenv('ROLE')
 
 
-MY_GUILD = discord.Object(id=1089329396868993084)  # replace with your guild id
-channelID = 1090402258031751228  # channel ID goes here
-role = "Net Control" #role for checking
+#MY_GUILD = discord.Object(id=1089329396868993084)  # replace with your guild id
+#channelID = 1090402258031751228  # channel ID goes here
+#role = "Net Control" #role for checking
 
 
 
