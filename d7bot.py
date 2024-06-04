@@ -48,7 +48,7 @@ bot = MyClient(intents=intents)
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the radar"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the radars"))
     print(f'Logged in as {bot.user} (ID: {bot.user.id})')
     print('------')
     
