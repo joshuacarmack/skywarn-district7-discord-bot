@@ -10,7 +10,7 @@ import os
 #from settings import token
 
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
-MY_GUILD = os.getenv('GUILD')
+MY_GUILD = discord.Object(id=os.getenv('GUILD'))
 channelID = os.getenv('CHANNEL')
 role = os.getenv('ROLE')
 
@@ -171,4 +171,4 @@ async def handler(ctx: commands.Context, error: commands.CommandError):
         error, ephemeral=True, delete_after=30
     )
 
-bot.run(token)
+bot.run(DISCORD_TOKEN)
