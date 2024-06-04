@@ -141,8 +141,8 @@ async def status(interaction: discord.Interaction, message: str) -> None:
     
     #Gets channel and sends message
     channel = bot.get_channel(int(channelID))
-    await channel.send(content='@everyone {message}')
-    await channel.send(content='Activated by: {interaction.user.display_name}')
+    await channel.send(content=f'@everyone {message}')
+    await channel.send(content=f'Updated by: {interaction.user.display_name}')
 
 # BOT TEST
 @bot.tree.command()
