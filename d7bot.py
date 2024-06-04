@@ -132,6 +132,18 @@ async def red(interaction: discord.Interaction):
     channel = bot.get_channel(int(channelID))
     await channel.send(content='@everyone Status: Red', embed=embed)
 
+# STATUS UPDATE
+@bot.tree.command(name="status", description="Alerts everyone of the status.")
+@app_commands.describe(message="Sends a weather update")
+@app_commands.checks.has_role(role)
+async def status(interaction: discord.Interaction, message: str) -> None:
+    """Gives an update"""
+    
+    #Gets channel and sends message
+    channel = bot.get_channel(int(channelID))
+    await channel.send(content='@everyone {message}')
+    await channel.send(content='Activated by: {interaction.user.display_name}')
+
 # BOT TEST
 @bot.tree.command()
 @app_commands.checks.has_role(role)
